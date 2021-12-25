@@ -39,12 +39,15 @@ yarn build:front-end
 ## Architecture
 
 1. Package Manager - Yarn
-2. Language - TypeScript *WIP
-3. Query Language/Server - Apollo + GraphQL
-4. Frontend framework - React 18 Alpha
-5. Data Architecture - Relay*
-6. UI Component Library - Material UI
-7. Theme - Devias Material Kit
-8. UI Component Explorer - Storybook*
+2. Linter - ESLint + Airbnb Style
+3. Formatter - Prettier
+4. Pre-commit hooks - Husky
+5. Language - TypeScript *WIP
+6. Query Language/Server - Apollo + GraphQL
+7. Frontend framework - React 18 Alpha
+8. Data Architecture - Relay*
+9. UI Component Library - Material UI
+10. Theme - Devias Material Kit
+11. UI Component Explorer - Storybook*
 
 * Not yet implemented
