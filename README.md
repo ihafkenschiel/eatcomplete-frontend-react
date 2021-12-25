@@ -17,7 +17,7 @@ yarn
 
 ## Running locally
 
-Run backend from Github repo `eatcomplete-backend-express`
+Run backend from Github repo [eatcomplete-backend-express](https://github.com/ihafkenschiel/eatcomplete-backend-express)
 
 Run front end:
 ```
