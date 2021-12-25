@@ -1,15 +1,13 @@
-/*********************
- * @author Ian Hafkenschiel
- * Copyright 2021
- *
- * All rights reserved.
- * Distribution of the software in any form is only allowed with
- * explicit, prior permission from the owner.
- */
-
 # eatComplete
 Nutritional meal recommender app
 By Ian Hafkenschiel
+
+
+## License
+
+Copyright 2021
+All rights reserved.
+Distribution of the software in any form is only allowed with explicit, prior permission from the owner.
 
 ## Install dependencies
 
