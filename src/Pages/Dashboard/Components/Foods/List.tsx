@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { Checkbox, TableCell, TableRow } from '@mui/material'
 import { useQuery } from '@apollo/client'
 // Local
@@ -10,10 +11,14 @@ interface Food {
   id: string
   name: string
 }
+interface IFoodsProps {
+  page: number
+}
 
-const Foods = () => {
+const Foods: FC<IFoodsProps> = ({ page }) => {
   const take = ITEMS_PER_PAGE
-  const skip = 0
+  const skip = (page - 1) * ITEMS_PER_PAGE
+
   const { loading, error, data } = useQuery(FOOD_NAMES, {
     variables: {
       take,

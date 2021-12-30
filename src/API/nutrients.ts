@@ -24,3 +24,9 @@ export const NUTRIENT_NAMES = gql`
     }
   }
 `
+
+export const NUM_NUTRIENTS = gql`
+  query GetNumNutrients {
+    numNutrients
+  }
+`

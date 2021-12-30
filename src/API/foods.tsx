@@ -21,3 +21,9 @@ export const FOOD_NAMES = gql`
     }
   }
 `
+
+export const NUM_FOODS = gql`
+  query GetNumFoods {
+    numFoods
+  }
+`

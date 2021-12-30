@@ -1,3 +1,4 @@
+import React, { FC, useState } from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import {
   Box,
@@ -13,7 +14,11 @@ import {
   InputAdornment,
 } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
+import { useQuery } from '@apollo/client'
+// Local
+import { NUM_FOODS } from 'API/foods'
 import FoodsList from './List'
+import { ITEMS_PER_PAGE } from '../constants'
 
 const Header = () => (
   <>
@@ -41,7 +46,11 @@ const SearchBar = () => (
   />
 )
 
-const FoodsTable = () => (
+interface IFoodsTableProps {
+  page: number
+}
+
+const FoodsTable: FC<IFoodsTableProps> = ({ page }) => (
   <PerfectScrollbar>
     <Box>
       <Table>
@@ -52,35 +61,61 @@ const FoodsTable = () => (
           </TableRow>
         </TableHead>
         <TableBody>
-          <FoodsList />
+          <FoodsList page={page} />
         </TableBody>
       </Table>
     </Box>
   </PerfectScrollbar>
 )
 
-const PaginationBar = () => (
-  <Box
-    sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      p: 2,
-    }}
-  >
-    <Pagination count={10} color="primary" />
-  </Box>
-)
+interface IPaginationBarProps {
+  page: number
+  handlePageChange: (event: React.ChangeEvent<unknown>, page: number) => void
+}
 
-const FoodsContainer = () => (
-  <Card>
-    <Header />
-    <br />
-    <SearchBar />
-    <br />
-    <br />
-    <FoodsTable />
-    <PaginationBar />
-  </Card>
-)
+const PaginationBar: FC<IPaginationBarProps> = ({ page, handlePageChange }) => {
+  const { loading, error, data } = useQuery(NUM_FOODS)
+
+  if (loading || error) return null
+
+  const pageCount = Math.ceil(data.numFoods / ITEMS_PER_PAGE)
+
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        p: 2,
+      }}
+    >
+      <Pagination
+        count={pageCount}
+        page={page}
+        onChange={handlePageChange}
+        color="primary"
+        shape="rounded"
+      />
+    </Box>
+  )
+}
+
+const FoodsContainer = () => {
+  const [page, setPage] = useState(1)
+  const handlePageChange = (_: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value)
+  }
+
+  return (
+    <Card>
+      <Header />
+      <br />
+      <SearchBar />
+      <br />
+      <br />
+      <FoodsTable page={page} />
+      <PaginationBar page={page} handlePageChange={handlePageChange} />
+    </Card>
+  )
+}
 
 export default FoodsContainer

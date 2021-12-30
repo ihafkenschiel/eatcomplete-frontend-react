@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { TableCell, TableRow } from '@mui/material'
 import { useQuery } from '@apollo/client'
 // Local
@@ -10,10 +11,14 @@ interface Nutrient {
   id: string
   name: string
 }
+interface INutrientsProps {
+  page: number
+}
 
-const Nutrients = () => {
+const Nutrients: FC<INutrientsProps> = ({ page }) => {
   const take = ITEMS_PER_PAGE
-  const skip = 0
+  const skip = (page - 1) * ITEMS_PER_PAGE
+
   const { loading, error, data } = useQuery(NUTRIENT_NAMES, {
     variables: {
       take,
