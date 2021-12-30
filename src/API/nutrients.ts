@@ -18,8 +18,8 @@ export async function fetchNutrients(
 }
 
 export const NUTRIENT_NAMES = gql`
-  query GetNutrientNames {
-    nutrients {
+  query GetNutrientNames($take: Int, $skip: Int) {
+    nutrients(take: $take, skip: $skip) {
       name
     }
   }

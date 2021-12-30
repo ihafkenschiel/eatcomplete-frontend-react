@@ -20,6 +20,7 @@ const Foods = () => {
       skip,
     },
   })
+
   if (loading)
     return (
       <TableRow>
@@ -28,14 +29,16 @@ const Foods = () => {
         </TableCell>
       </TableRow>
     )
-  if (error)
+
+  if (error) {
     return (
       <TableRow>
         <TableCell colSpan={2}>
-          <ErrorMessage>Error loading data</ErrorMessage>
+          <ErrorMessage>{error.message ?? 'Error loading data'}</ErrorMessage>
         </TableCell>
       </TableRow>
     )
+  }
 
   return data.foods.map((item: Food) => (
     <TableRow hover key={item.id}>
