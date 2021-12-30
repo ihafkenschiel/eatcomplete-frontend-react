@@ -12,14 +12,14 @@ const App = () => {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-    <CssBaseline />
+        <CssBaseline />
         <DashboardLayout>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/create-meal" element={<CreateMeal />} />
             <Route path="/about" element={<About />} />
           </Routes>
-    </DashboardLayout>
+        </DashboardLayout>
       </ThemeProvider>
     </div>
   )

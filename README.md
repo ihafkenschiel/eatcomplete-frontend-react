@@ -45,8 +45,8 @@ yarn build:front-end
 5. Language - TypeScript *WIP
 6. Query Language/Server - Apollo + GraphQL
 7. Frontend framework - React 18 Alpha
-8. Data Architecture - Relay*
-9. UI Component Library - Material UI
+8. Data Architecture - Relay* (considering Redux Toolkit and RxJs)
+9. UI Component Library - Material UI (considering Tailwind UI)
 10. Theme - Devias Material Kit
 11. UI Component Explorer - Storybook*
 
