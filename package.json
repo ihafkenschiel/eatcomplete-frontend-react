@@ -1,7 +1,9 @@
 {
   "name": "eatcomplete-frontend",
   "version": "2.0.0",
-  "description": "Nutritional food diary and meal recommender",
+  "description": "Nutritional food diary and meal recommender. Frontend server.",
+  "author": "Ian Hafkenschiel (https://ianhafkenschiel.com)",
+  "license": "None",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
