@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import {
   Box,
@@ -12,7 +13,16 @@ import {
 } from '@mui/material'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 
-export const Nutrients = ({ nutrients }) => (
+interface Nutrient {
+  id: string
+  name: string
+}
+
+interface Props {
+  nutrients: Nutrient[]
+}
+
+export const Nutrients: FC<Props> = ({ nutrients }) => (
   <Card>
     <Typography sx={{ m: 1 }} variant="h4">
       Missing Nutrients
@@ -28,7 +38,7 @@ export const Nutrients = ({ nutrients }) => (
             </TableRow>
           </TableHead>
           <TableBody>
-            {nutrients.map((nutrientItem) => (
+            {nutrients.map((nutrientItem: Nutrient) => (
               <TableRow hover key={nutrientItem.id}>
                 <TableCell>{nutrientItem.name}</TableCell>
               </TableRow>

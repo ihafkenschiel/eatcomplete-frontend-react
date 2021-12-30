@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   Card,
-  Checkbox,
   Table,
   TableBody,
   TableCell,
@@ -15,8 +14,9 @@ import {
 } from '@mui/material'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 import SearchIcon from '@mui/icons-material/Search'
+import Foods from './Foods'
 
-export const FindFoods = ({ foods }) => (
+export const FindFoods = () => (
   <Card>
     <Typography sx={{ m: 1 }} variant="h4">
       Foods
@@ -49,18 +49,7 @@ export const FindFoods = ({ foods }) => (
             </TableRow>
           </TableHead>
           <TableBody>
-            {foods.map((foodItem) => (
-              <TableRow hover key={foodItem.id}>
-                <TableCell padding="checkbox">
-                  <Checkbox
-                    checked={false}
-                    onChange={() => null}
-                    value="false"
-                  />
-                </TableCell>
-                <TableCell>{foodItem.name}</TableCell>
-              </TableRow>
-            ))}
+            <Foods />
           </TableBody>
         </Table>
       </Box>

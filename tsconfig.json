@@ -18,5 +18,5 @@
     "typeRoots": ["src/@types", "node_modules/@types"],
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "graphql.config.ts"]
 }

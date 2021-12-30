@@ -1,4 +1,4 @@
-import { API_ROOT } from './root.ts'
+import { API_ROOT } from './root'
 
 export async function fetchNutrients() {
   const res = await fetch(`${API_ROOT}/nutrients`)

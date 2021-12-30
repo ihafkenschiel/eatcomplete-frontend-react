@@ -6,6 +6,7 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
+    "airbnb-typescript",
     "airbnb-base",
     "plugin:prettier/recommended"
   ],
@@ -15,27 +16,39 @@
       "jsx": true
     },
     "ecmaVersion": 13,
+    "project": "./tsconfig.json",
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "prettier/prettier": "error",
     "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
-    "react/jsx-filename-extension": "off",
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "import/no-unresolved": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/prop-types": "off",
-    "react/no-array-index-key": "off",
     "import/prefer-default-export": "off",
-    "react/react-in-jsx-scope": "off",
     "no-plusplus": "off",
+    "no-use-before-define": "off",
+    "prefer-arrow-callback": "off",
+    "prettier/prettier": "error",
     "react/function-component-definition": [
       2,
       {
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
       }
-    ]
+    ],
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }
