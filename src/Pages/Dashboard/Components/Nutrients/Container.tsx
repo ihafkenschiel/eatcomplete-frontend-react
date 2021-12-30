@@ -12,17 +12,10 @@ import {
   Typography,
 } from '@mui/material'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
+// Local
+import NutrientsList from './List'
 
-interface Nutrient {
-  id: string
-  name: string
-}
-
-interface Props {
-  nutrients: Nutrient[]
-}
-
-export const Nutrients: FC<Props> = ({ nutrients }) => (
+const NutrientsContainer: FC = () => (
   <Card>
     <Typography sx={{ m: 1 }} variant="h4">
       Missing Nutrients
@@ -38,11 +31,7 @@ export const Nutrients: FC<Props> = ({ nutrients }) => (
             </TableRow>
           </TableHead>
           <TableBody>
-            {nutrients.map((nutrientItem: Nutrient) => (
-              <TableRow hover key={nutrientItem.id}>
-                <TableCell>{nutrientItem.name}</TableCell>
-              </TableRow>
-            ))}
+            <NutrientsList />
           </TableBody>
         </Table>
       </Box>
@@ -65,3 +54,5 @@ export const Nutrients: FC<Props> = ({ nutrients }) => (
     </Box>
   </Card>
 )
+
+export default NutrientsContainer

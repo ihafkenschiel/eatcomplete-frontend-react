@@ -1,7 +1,26 @@
-import { API_ROOT } from './root'
+import { gql, ApolloClient, NormalizedCacheObject } from '@apollo/client'
+// Local
 
-export async function fetchNutrients() {
-  const res = await fetch(`${API_ROOT}/nutrients`)
-  const json = await res.json()
-  return json
+export async function fetchNutrients(
+  client: ApolloClient<NormalizedCacheObject>
+) {
+  const results = await client.query({
+    query: gql`
+      query GetNutrientNames {
+        nutrients {
+          name
+        }
+      }
+    `,
+  })
+
+  return results
 }
+
+export const NUTRIENT_NAMES = gql`
+  query GetNutrientNames {
+    nutrients {
+      name
+    }
+  }
+`

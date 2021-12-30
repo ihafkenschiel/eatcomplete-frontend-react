@@ -11,8 +11,6 @@ export async function fetchFoods(client: ApolloClient<NormalizedCacheObject>) {
     `,
   })
 
-  console.log('food', results)
-
   return results
 }
 

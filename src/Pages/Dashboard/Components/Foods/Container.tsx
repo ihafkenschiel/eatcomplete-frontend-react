@@ -14,9 +14,9 @@ import {
 } from '@mui/material'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 import SearchIcon from '@mui/icons-material/Search'
-import Foods from './Foods'
+import FoodsList from './List'
 
-export const FindFoods = () => (
+const FoodsContainer = () => (
   <Card>
     <Typography sx={{ m: 1 }} variant="h4">
       Foods
@@ -49,7 +49,7 @@ export const FindFoods = () => (
             </TableRow>
           </TableHead>
           <TableBody>
-            <Foods />
+            <FoodsList />
           </TableBody>
         </Table>
       </Box>
@@ -72,3 +72,5 @@ export const FindFoods = () => (
     </Box>
   </Card>
 )
+
+export default FoodsContainer
