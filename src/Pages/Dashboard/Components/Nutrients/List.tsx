@@ -1,6 +1,8 @@
 import { TableCell, TableRow } from '@mui/material'
 import { useQuery } from '@apollo/client'
+// Local
 import { NUTRIENT_NAMES } from 'API/nutrients'
+import LoadingIndicator from 'Components/LoadingIndicator'
 
 interface Nutrient {
   id: string
@@ -9,7 +11,7 @@ interface Nutrient {
 
 const Nutrients = () => {
   const { loading, error, data } = useQuery(NUTRIENT_NAMES)
-  if (loading) return <p>Loading...</p>
+  if (loading) return <LoadingIndicator />
   if (error) return <p>Error :(</p>
 
   return data.nutrients.map((item: Nutrient) => (
