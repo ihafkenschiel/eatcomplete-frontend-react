@@ -1,8 +1,8 @@
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import {
   Box,
-  Button,
   Card,
+  Pagination,
   Table,
   TableBody,
   TableCell,
@@ -12,64 +12,74 @@ import {
   TextField,
   InputAdornment,
 } from '@mui/material'
-import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 import SearchIcon from '@mui/icons-material/Search'
 import FoodsList from './List'
 
-const FoodsContainer = () => (
-  <Card>
+const Header = () => (
+  <>
     <Typography sx={{ m: 1 }} variant="h4">
       Foods
     </Typography>
     <Typography sx={{ m: 1 }}>
       Check off the foods you have eaten today.
     </Typography>
-    <br />
-    <TextField
-      fullWidth
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <SearchIcon />
-          </InputAdornment>
-        ),
-      }}
-      placeholder="Start typing an ingredient"
-      variant="outlined"
-    />
-    <br />
-    <br />
-    <PerfectScrollbar>
-      <Box>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>&nbsp;</TableCell>
-              <TableCell>Name</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <FoodsList />
-          </TableBody>
-        </Table>
-      </Box>
-    </PerfectScrollbar>
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        p: 2,
-      }}
-    >
-      <Button
-        color="primary"
-        endIcon={<ArrowRightIcon fontSize="small" />}
-        size="small"
-        variant="text"
-      >
-        View all
-      </Button>
+  </>
+)
+
+const SearchBar = () => (
+  <TextField
+    fullWidth
+    InputProps={{
+      startAdornment: (
+        <InputAdornment position="start">
+          <SearchIcon />
+        </InputAdornment>
+      ),
+    }}
+    placeholder="Start typing an ingredient"
+    variant="outlined"
+  />
+)
+
+const FoodsTable = () => (
+  <PerfectScrollbar>
+    <Box>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>&nbsp;</TableCell>
+            <TableCell>Name</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <FoodsList />
+        </TableBody>
+      </Table>
     </Box>
+  </PerfectScrollbar>
+)
+
+const PaginationBar = () => (
+  <Box
+    sx={{
+      display: 'flex',
+      justifyContent: 'center',
+      p: 2,
+    }}
+  >
+    <Pagination count={10} color="primary" />
+  </Box>
+)
+
+const FoodsContainer = () => (
+  <Card>
+    <Header />
+    <br />
+    <SearchBar />
+    <br />
+    <br />
+    <FoodsTable />
+    <PaginationBar />
   </Card>
 )
 

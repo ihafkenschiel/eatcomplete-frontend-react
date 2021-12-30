@@ -3,6 +3,8 @@ import { useQuery } from '@apollo/client'
 // Local
 import { FOOD_NAMES } from 'API/foods'
 import LoadingIndicator from 'Components/LoadingIndicator'
+import ErrorMessage from 'Components/ErrorMessage'
+import { ITEMS_PER_PAGE } from '../constants'
 
 interface Food {
   id: string
@@ -10,7 +12,14 @@ interface Food {
 }
 
 const Foods = () => {
-  const { loading, error, data } = useQuery(FOOD_NAMES)
+  const take = ITEMS_PER_PAGE
+  const skip = 0
+  const { loading, error, data } = useQuery(FOOD_NAMES, {
+    variables: {
+      take,
+      skip,
+    },
+  })
   if (loading)
     return (
       <TableRow>
@@ -19,7 +28,14 @@ const Foods = () => {
         </TableCell>
       </TableRow>
     )
-  if (error) return <p>Error :(</p>
+  if (error)
+    return (
+      <TableRow>
+        <TableCell colSpan={2}>
+          <ErrorMessage>Error loading data</ErrorMessage>
+        </TableCell>
+      </TableRow>
+    )
 
   return data.foods.map((item: Food) => (
     <TableRow hover key={item.id}>

@@ -15,8 +15,8 @@ export async function fetchFoods(client: ApolloClient<NormalizedCacheObject>) {
 }
 
 export const FOOD_NAMES = gql`
-  query GetFoodNames {
-    foods {
+  query GetFoodNames($take: Int, $skip: Int) {
+    foods(take: $take, skip: $skip) {
       name
     }
   }
