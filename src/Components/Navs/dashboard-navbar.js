@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { AppBar, Avatar, Box, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import { UserCircle as UserCircleIcon } from 'Icons/user-circle'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 const DashboardNavbarRoot = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
@@ -52,7 +52,7 @@ export const DashboardNavbar = (props) => {
           }}
           src="/static/images/avatars/avatar_1.png"
         >
-          <UserCircleIcon fontSize="small" />
+          <AccountCircleIcon fontSize="small" />
         </Avatar>
       </Toolbar>
     </DashboardNavbarRoot>

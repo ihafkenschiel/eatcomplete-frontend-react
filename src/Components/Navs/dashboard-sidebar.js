@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { Box, Divider, Drawer, useMediaQuery } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
-import { User as UserIcon } from 'Icons/user'
+import UserIcon from '@mui/icons-material/Person'
 import { Logo } from '../logo'
 import { NavItem } from './nav-item'
 

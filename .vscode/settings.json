@@ -1,4 +1,24 @@
 {
   "prettier.eslintIntegration": true,
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#0d7f3f",
+    "activityBar.activeBorder": "#480f91",
+    "activityBar.background": "#0d7f3f",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#480f91",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "sash.hoverBorder": "#0d7f3f",
+    "statusBar.background": "#085128",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#0d7f3f",
+    "statusBarItem.remoteBackground": "#085128",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#085128",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#08512899",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#085128"
 }
