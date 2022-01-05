@@ -30,6 +30,12 @@ Create-react-app will auto hot-reload any changes in front-end directory
 
 Navigate to `http://localhost:3000` in your browser.
 
+## Runnig Storybook
+Component Galley Server
+
+Run:
+`yarn storybook`
+
 ## Building front-end
 
 ```sh
