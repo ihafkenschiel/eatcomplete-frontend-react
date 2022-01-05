@@ -2,10 +2,10 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 // Local
-import LoadingIndicator from 'Components/LoadingIndicator'
+import LoadingIndicator from 'Components/Simple/LoadingIndicator'
 
 export default {
-  title: 'Components/LoadingIndicator',
+  title: 'Components/Simple/LoadingIndicator',
   component: LoadingIndicator,
   decorators: [withKnobs],
 } as ComponentMeta<typeof LoadingIndicator>

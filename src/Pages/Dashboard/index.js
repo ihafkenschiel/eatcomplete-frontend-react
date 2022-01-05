@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material'
 // Local
-import { FullWidthLayout } from 'Components/Layout/FullWidthLayout'
+import { FullWidthLayout } from 'Components/Simple/Layout/FullWidthLayout'
 import Foods from './Components/Foods'
 import Nutrients from './Components/Nutrients'
 

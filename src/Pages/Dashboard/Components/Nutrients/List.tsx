@@ -3,7 +3,7 @@ import { TableCell, TableRow } from '@mui/material'
 import { useQuery } from '@apollo/client'
 // Local
 import { NUTRIENT_NAMES } from 'API/nutrients'
-import LoadingIndicator from 'Components/LoadingIndicator'
+import LoadingIndicator from 'Components/Simple/LoadingIndicator'
 import ErrorMessage from 'Components/ErrorMessage'
 import { ITEMS_PER_PAGE } from '../constants'
 

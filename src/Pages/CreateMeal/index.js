@@ -4,7 +4,7 @@ import { fetchNutrients } from 'API/nutrients'
 import { useEffect, useState } from 'react'
 import { Grid } from '@mui/material'
 
-import { FullWidthLayout } from 'Components/Layout/FullWidthLayout'
+import { FullWidthLayout } from 'Components/Simple/Layout/FullWidthLayout'
 import { Ingredients } from './Components/Ingredients'
 import { SelectNutrients } from './Components/SelectNutrients'
 

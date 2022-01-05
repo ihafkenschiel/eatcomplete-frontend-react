@@ -1,10 +1,10 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Logo } from 'Components/logo'
+import { Logo } from 'Components/Simple/Logo'
 
 export default {
-  title: 'Components/Logo',
+  title: 'Components/Simple/Logo',
   component: Logo,
   parameters: {
     backgrounds: {

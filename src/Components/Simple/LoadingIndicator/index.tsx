@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Box, CircularProgress } from '@mui/material'
 
-export interface ILoadingIndicatorProps {
+export interface IProps {
   color:
     | 'inherit'
     | 'primary'
@@ -14,11 +14,7 @@ export interface ILoadingIndicatorProps {
   thickness: number
 }
 
-const LoadingIndicator: FC<ILoadingIndicatorProps> = ({
-  color,
-  size,
-  thickness,
-}) => {
+const LoadingIndicator: FC<IProps> = ({ color, size, thickness }) => {
   return (
     <Box
       m={2}

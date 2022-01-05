@@ -1,5 +1,5 @@
 import { Card, CardHeader } from '@mui/material'
-import { FullWidthLayout } from 'Components/Layout/FullWidthLayout'
+import { FullWidthLayout } from 'Components/Simple/Layout/FullWidthLayout'
 
 const About = () => (
   <FullWidthLayout>

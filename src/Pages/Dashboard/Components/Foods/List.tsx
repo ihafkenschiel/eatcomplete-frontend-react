@@ -3,7 +3,7 @@ import { Checkbox, TableCell, TableRow } from '@mui/material'
 import { useQuery } from '@apollo/client'
 // Local
 import { FOOD_NAMES } from 'API/foods'
-import LoadingIndicator from 'Components/LoadingIndicator'
+import LoadingIndicator from 'Components/Simple/LoadingIndicator'
 import ErrorMessage from 'Components/ErrorMessage'
 import { ITEMS_PER_PAGE } from '../constants'
 
