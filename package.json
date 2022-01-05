@@ -14,7 +14,9 @@
     "prettify": "npx prettier --write .",
     "pretty-quick": "pretty-quick",
     "lint": "eslint src/",
-    "lint:write": "eslint --debug src/ --fix"
+    "lint:write": "eslint --debug src/ --fix",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
@@ -24,12 +26,12 @@
     "@mui/icons-material": "^5.2.1",
     "@mui/material": "^5.2.3",
     "@testing-library/jest-dom": "5.16.1",
-    "@testing-library/react": "11.2.7",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "12.8.3",
     "@types/node": "16.11.12",
     "@types/react": "^17.0.37",
     "@types/react-dom": "17.0.11",
-    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^4.0.1",
     "graphql": "^16.2.0",
     "graphql-config": "^4.1.0",
@@ -55,6 +57,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.16.7",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/node-logger": "^6.4.9",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.4.9",
+    "@types/jest": "^27.4.0",
     "@types/react-router-dom": "5.3.2",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "15.0.0",
@@ -74,6 +84,18 @@
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix"
+    ]
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   }
 }

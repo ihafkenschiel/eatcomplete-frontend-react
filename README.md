@@ -48,6 +48,6 @@ yarn build:front-end
 8. Data Architecture - Relay* (considering Redux Toolkit and RxJs)
 9. UI Component Library - Material UI (considering Tailwind UI)
 10. Theme - Devias Material Kit
-11. UI Component Explorer - Storybook*
+11. UI Component Explorer - Storybook *WIP
 
 * Not yet implemented
