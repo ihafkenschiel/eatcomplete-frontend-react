@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 // Local
 import LoadingIndicator from 'Components/LoadingIndicator'
 

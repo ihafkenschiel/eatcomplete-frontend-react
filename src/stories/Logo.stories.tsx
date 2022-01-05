@@ -4,17 +4,27 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Logo } from 'Components/logo'
 
 export default {
-  title: 'Logo',
+  title: 'Components/Logo',
   component: Logo,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  parameters: {
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#FFF' },
+        { name: 'dark', value: '#000' },
+      ],
+    },
   },
 } as ComponentMeta<typeof Logo>
 
-const Template: ComponentStory<typeof Logo> = (args) => <Logo {...args} />
+const Template: ComponentStory<typeof Logo> = () => <Logo />
 
-export const Primary = Template.bind({})
-Primary.args = {
-  primary: true,
-  label: 'Logo',
+export const LightBackground = Template.bind({})
+LightBackground.parameters = {
+  backgrounds: { default: 'light' },
+}
+
+export const DarkBackground = Template.bind({})
+DarkBackground.parameters = {
+  backgrounds: { default: 'dark' },
 }
