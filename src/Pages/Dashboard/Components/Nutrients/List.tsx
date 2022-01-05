@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client'
 // Local
 import { NUTRIENT_NAMES } from 'API/nutrients'
 import LoadingIndicator from 'Components/Simple/LoadingIndicator'
-import ErrorMessage from 'Components/ErrorMessage'
+import ErrorMessage from 'Components/Simple/ErrorMessage'
 import { ITEMS_PER_PAGE } from '../constants'
 
 interface Nutrient {

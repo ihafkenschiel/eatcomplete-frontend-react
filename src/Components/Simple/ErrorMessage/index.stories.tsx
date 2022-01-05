@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof ErrorMessage> = ({ children }) => (
   <ErrorMessage>{children}</ErrorMessage>
 )
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const Default = Template.bind({})
+Default.args = {
   children: 'This is a warning message!',
 }
