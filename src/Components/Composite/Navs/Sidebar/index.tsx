@@ -1,10 +1,20 @@
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
+// import PropTypes from 'prop-types'
 import { Box, Divider, Drawer, useMediaQuery } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import UserIcon from '@mui/icons-material/Person'
-import { Logo } from '../../Simple/Logo'
-import { NavItem } from './nav-item'
+// Local
+import { Logo } from '../../../Simple/Logo'
+import { NavItem } from '../nav-item'
+
+interface IProps {
+  onClose?(
+    event: Record<string, unknown>,
+    reason: 'backdropClick' | 'escapeKeyDown'
+  ): void
+  open?: boolean
+}
 
 const items = [
   {
@@ -24,12 +34,11 @@ const items = [
   },
 ]
 
-export const DashboardSidebar = (props) => {
-  const { open, onClose } = props
-  const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'), {
-    defaultMatches: true,
-    noSsr: false,
-  })
+export const Sidebar: FC<IProps> = ({ open, onClose }) => {
+  // const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'), {
+  //   defaultMatches: true,
+  //   noSsr: false,
+  // })
 
   const content = (
     <Box
@@ -42,12 +51,7 @@ export const DashboardSidebar = (props) => {
       <div>
         <Box sx={{ p: 3 }}>
           <a href="/">
-            <Logo
-              sx={{
-                height: 42,
-                width: 42,
-              }}
-            />
+            <Logo />
           </a>
         </Box>
       </div>
@@ -70,24 +74,24 @@ export const DashboardSidebar = (props) => {
     </Box>
   )
 
-  if (lgUp) {
-    return (
-      <Drawer
-        anchor="left"
-        open
-        PaperProps={{
-          sx: {
-            backgroundColor: 'neutral.900',
-            color: '#FFFFFF',
-            width: 280,
-          },
-        }}
-        variant="permanent"
-      >
-        {content}
-      </Drawer>
-    )
-  }
+  // if (lgUp) {
+  //   return (
+  //     <Drawer
+  //       anchor="left"
+  //       open
+  //       PaperProps={{
+  //         sx: {
+  //           backgroundColor: 'neutral.900',
+  //           color: '#FFFFFF',
+  //           width: 280,
+  //         },
+  //       }}
+  //       variant="permanent"
+  //     >
+  //       {content}
+  //     </Drawer>
+  //   )
+  // }
 
   return (
     <Drawer
@@ -109,12 +113,12 @@ export const DashboardSidebar = (props) => {
   )
 }
 
-DashboardSidebar.defaultProps = {
+Sidebar.defaultProps = {
   onClose: () => null,
   open: false,
 }
 
-DashboardSidebar.propTypes = {
-  onClose: PropTypes.func,
-  open: PropTypes.bool,
-}
+// Sidebar.propTypes = {
+//   onClose: PropTypes.func,
+//   open: PropTypes.bool,
+// }

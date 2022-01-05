@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 // import styled from '@emotion/styled'
 import { Avatar, Box, IconButton, Toolbar } from '@mui/material' // AppBar
 import MenuIcon from '@mui/icons-material/Menu'
