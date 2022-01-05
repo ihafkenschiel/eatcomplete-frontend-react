@@ -1,14 +1,16 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest/globals": true
   },
   "extends": [
     "plugin:react/recommended",
     "airbnb",
     "airbnb-typescript",
     "airbnb-base",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -17,11 +19,17 @@
     },
     "ecmaVersion": 13,
     "project": "./tsconfig.json",
-    "sourceType": "module"
+    "sourceType": "module",
+    "warnOnUnsupportedTypeScriptVersion": false
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "jest"],
   "rules": {
     "arrow-body-style": "off",
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
     "import/extensions": [
       "error",
       "never",
@@ -30,6 +38,13 @@
         "jsx": "never",
         "ts": "never",
         "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.stories.*", "**/.storybook/**/*.*"],
+        "peerDependencies": true
       }
     ],
     "import/no-unresolved": "off",
