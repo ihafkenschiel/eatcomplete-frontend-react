@@ -99,7 +99,7 @@ const PaginationBar: FC<IPaginationBarProps> = ({ page, handlePageChange }) => {
   )
 }
 
-const FoodsContainer = () => {
+const FoodsContainer = (): JSX.Element => {
   const [page, setPage] = useState(1)
   const handlePageChange = (_: React.ChangeEvent<unknown>, value: number) => {
     setPage(value)

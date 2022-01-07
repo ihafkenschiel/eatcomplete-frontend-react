@@ -1,15 +1,16 @@
 // Modules
+import * as React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { CssBaseline } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles'
 import { theme } from 'Theme'
-import { DashboardLayout } from 'Components/Composite/Navs/dashboard-layout'
+import { DashboardLayout } from 'Components/Composite/Navs'
 // Local
 import Dashboard from 'Pages/Dashboard'
 import CreateMeal from 'Pages/CreateMeal'
 import About from 'Pages/About'
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>

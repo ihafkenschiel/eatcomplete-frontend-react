@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { Box, CircularProgress } from '@mui/material'
 
 export interface IProps {
-  color:
+  color?:
     | 'inherit'
     | 'primary'
     | 'secondary'
@@ -10,11 +10,15 @@ export interface IProps {
     | 'info'
     | 'success'
     | 'warning'
-  size: number
-  thickness: number
+  size?: number
+  thickness?: number
 }
 
-const LoadingIndicator: FC<IProps> = ({ color, size, thickness }) => {
+const LoadingIndicator: FC<IProps> = ({
+  color = 'primary',
+  size = 50,
+  thickness = 10,
+}) => {
   return (
     <Box
       m={2}

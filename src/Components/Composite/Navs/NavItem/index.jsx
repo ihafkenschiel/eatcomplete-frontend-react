@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types'
+import React from 'react'
 import { Box, Button, ListItem } from '@mui/material'
 
-export const NavItem = (props) => {
-  const { href, icon, title, ...others } = props
+export const NavItem = ({ href, icon, title }) => {
   const active = false
 
   return (
@@ -14,7 +13,6 @@ export const NavItem = (props) => {
         py: 0,
         px: 2,
       }}
-      {...others}
     >
       <Button
         component="a"
@@ -43,16 +41,4 @@ export const NavItem = (props) => {
       </Button>
     </ListItem>
   )
-}
-
-NavItem.defaultProps = {
-  href: '',
-  icon: {},
-  title: '',
-}
-
-NavItem.propTypes = {
-  href: PropTypes.string,
-  icon: PropTypes.node,
-  title: PropTypes.string,
 }

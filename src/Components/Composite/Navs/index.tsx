@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import { Navbar } from './Navbar/Navbar'
+import { Navbar } from './Navbar'
 import { Sidebar } from './Sidebar'
 
 const DashboardLayoutRoot = styled('div')(({ theme }) => ({
@@ -14,8 +14,11 @@ const DashboardLayoutRoot = styled('div')(({ theme }) => ({
   },
 }))
 
-export const DashboardLayout = (props) => {
-  const { children } = props
+interface IProps {
+  children: JSX.Element
+}
+
+export const DashboardLayout: FC<IProps> = ({ children }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(true)
 
   return (

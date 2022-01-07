@@ -1,6 +1,8 @@
-import { gql, ApolloClient, NormalizedCacheObject } from '@apollo/client'
+import { gql } from '@apollo/client'
+// Local
+import { TGraphQLQuery } from './types'
 
-export async function fetchFoods(client: ApolloClient<NormalizedCacheObject>) {
+export const fetchFoods: TGraphQLQuery = async (client) => {
   const results = await client.query({
     query: gql`
       query GetFoodNames {

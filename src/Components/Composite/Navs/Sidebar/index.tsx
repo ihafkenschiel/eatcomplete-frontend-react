@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 // import PropTypes from 'prop-types'
-import { Box, Divider, Drawer, useMediaQuery } from '@mui/material'
+import { Box, Divider, Drawer } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import UserIcon from '@mui/icons-material/Person'
 // Local
 import { Logo } from '../../../Simple/Logo'
-import { NavItem } from '../nav-item'
+import { NavItem } from '../NavItem'
 
 interface IProps {
   onClose?(
