@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
-// import PropTypes from 'prop-types'
-import { Box, Divider, Drawer } from '@mui/material'
+import PropTypes from 'prop-types'
+import { Box, Divider, Drawer, useMediaQuery } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import UserIcon from '@mui/icons-material/Person'
 // Local
+import { theme } from 'Theme'
 import { Logo } from '../../../Simple/Logo'
 import { NavItem } from '../NavItem'
 
@@ -35,10 +36,10 @@ const items = [
 ]
 
 export const Sidebar: FC<IProps> = ({ open, onClose }) => {
-  // const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'), {
-  //   defaultMatches: true,
-  //   noSsr: false,
-  // })
+  const lgUp = useMediaQuery(() => theme.breakpoints.up('lg'), {
+    defaultMatches: true,
+    noSsr: false,
+  })
 
   const content = (
     <Box
@@ -74,24 +75,24 @@ export const Sidebar: FC<IProps> = ({ open, onClose }) => {
     </Box>
   )
 
-  // if (lgUp) {
-  //   return (
-  //     <Drawer
-  //       anchor="left"
-  //       open
-  //       PaperProps={{
-  //         sx: {
-  //           backgroundColor: 'neutral.900',
-  //           color: '#FFFFFF',
-  //           width: 280,
-  //         },
-  //       }}
-  //       variant="permanent"
-  //     >
-  //       {content}
-  //     </Drawer>
-  //   )
-  // }
+  if (lgUp) {
+    return (
+      <Drawer
+        anchor="left"
+        open
+        PaperProps={{
+          sx: {
+            backgroundColor: 'neutral.900',
+            color: '#FFFFFF',
+            width: 280,
+          },
+        }}
+        variant="permanent"
+      >
+        {content}
+      </Drawer>
+    )
+  }
 
   return (
     <Drawer
@@ -105,7 +106,7 @@ export const Sidebar: FC<IProps> = ({ open, onClose }) => {
           width: 280,
         },
       }}
-      sx={{ zIndex: (theme) => theme.zIndex.appBar + 100 }}
+      sx={{ zIndex: () => theme.zIndex.appBar + 100 }}
       variant="temporary"
     >
       {content}
@@ -118,7 +119,7 @@ Sidebar.defaultProps = {
   open: false,
 }
 
-// Sidebar.propTypes = {
-//   onClose: PropTypes.func,
-//   open: PropTypes.bool,
-// }
+Sidebar.propTypes = {
+  onClose: PropTypes.func,
+  open: PropTypes.bool,
+}
