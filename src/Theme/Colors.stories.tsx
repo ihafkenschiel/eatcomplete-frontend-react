@@ -1,11 +1,9 @@
 import React from 'react'
-
+// Local
+import { capitalize } from 'Utils/Text'
 import { theme } from 'Theme'
 
 export const Colors = () => {
-  const capitalize = (word: string) =>
-    word.charAt(0).toUpperCase() + word.slice(1)
-
   const getSwatches = (swatches: string[]) =>
     Object.entries(swatches).map(function renderVariant([variantName, color]: [
       string,
@@ -23,7 +21,9 @@ export const Colors = () => {
 
     return (
       <div key={colorName} style={{ padding: 20, textAlign: 'center' }}>
-        <h2>{capitalize(colorName)}</h2>
+        <h2 style={{ color: theme.palette.info.main }}>
+          {capitalize(colorName)}
+        </h2>
         {getSwatches(variants)}
       </div>
     )
